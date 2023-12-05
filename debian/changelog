@@ -1,5 +1,78 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-geertjohan-go.rice (1.0.2-1) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor (Jelmer Vernooĳ) ]
+  * Wrap long lines in changelog entries: 0.0~git20160123.0.0f3f5fd-3.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Anthony Fok ]
+  * New upstream version 1.0.2
+  * Add minimum versions to dependencies to avoid prevent FTBFS on backports
+    on downstream packages, see for example the failed buildd logs of
+    golang-github-alecthomas-chroma 0.8.2-1~bpo10+1
+  * Change Section from devel to golang
+  * Bump debhelper dependency to "Build-Depends: debhelper-compat (= 13)"
+  * Bump Standards-Version to 4.5.1 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Mon, 08 Feb 2021 19:28:16 -0700
+
+golang-github-geertjohan-go.rice (1.0.0+git20191102.d954009-1) unstable; urgency=medium
+
+  * New upstream version 1.0.0+git20191102.d954009
+
+ -- Anthony Fok <foka@debian.org>  Tue, 03 Dec 2019 02:30:29 -0700
+
+golang-github-geertjohan-go.rice (1.0.0-1) unstable; urgency=medium
+
+  * New upstream version 1.0.0
+  * Add debian/watch to track upstream tarball
+  * Remove debian/patches as the only patch therein is now obsolete
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+  * Update Maintainer email address to team+pkg-go@tracker.debian.org
+  * Add "Rules-Requires-Root: no" to debian/control
+  * Apply "cme fix dpkg" fixes:
+    - Update debhelper dependency to "Build-Depends: debhelper-compat (= 12)"
+    - Bump Standards-Version to 4.4.1 (no change)
+  * Add new dependencies: golang-github-nkovacs-streamquote-dev
+    and golang-github-valyala-fasttemplate-dev
+  * Fix duplicate-short-description in debian/control as reported by Lintian
+  * Add myself to the list of Uploaders
+
+ -- Anthony Fok <foka@debian.org>  Tue, 03 Dec 2019 02:06:59 -0700
+
+golang-github-geertjohan-go.rice (0.0~git20160123.0.0f3f5fd-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Dmitry Smirnov ]
+  * Testsuite: autopkgtest-pkg-go
+  * Standards-Version: 4.1.4; Priority: optional
+  * debhelper & compat to version 11
+  * Patch away "golang-github-kardianos-osext-dev";
+    removed the latter from (Build-)Depends.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 05 Jul 2018 12:09:08 +1000
+
+golang-github-geertjohan-go.rice (0.0~git20160123.0.0f3f5fd-3) unstable; urgency=medium
+
+  * Replace golang-go with golang-any in Build-Depends, remove golang-go from
+    Depends
+
+ -- Konstantinos Margaritis <markos@debian.org>  Tue, 08 Aug 2017 20:15:23 +0300
+
+golang-github-geertjohan-go.rice (0.0~git20160123.0.0f3f5fd-2) unstable; urgency=medium
+
+  * Replace dependency on golang-github-jessevdk-go-flags-dev with
+    golang-go-flags-dev.
+
+ -- Tim Potter <tpot@hpe.com>  Wed, 04 Jan 2017 10:29:06 +1100
+
+golang-github-geertjohan-go.rice (0.0~git20160123.0.0f3f5fd-1) unstable; urgency=medium
+
+  * Initial release (Closes: #844474)
+
+ -- Tim Potter <tpot@hpe.com>  Thu, 03 Nov 2016 11:46:14 +1100

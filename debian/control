@@ -1,15 +1,59 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-geertjohan-go.rice
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Tim Potter <tpot@hpe.com>,
+           Anthony Fok <foka@debian.org>
+Section: golang
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               golang-github-akavel-rsrc-dev (>= 0.8.0),
+               golang-github-daaku-go.zipexe-dev (>= 1.0.0),
+               golang-github-davecgh-go-spew-dev (>= 1.1.1),
+               golang-github-geertjohan-go.incremental-dev (>= 1.0.0),
+               golang-github-nkovacs-streamquote-dev (>= 1.0.0),
+               golang-github-valyala-fasttemplate-dev (>= 1.0.1),
+               golang-go-flags-dev (>= 1.4.0)
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-geertjohan-go.rice
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-geertjohan-go.rice.git
+Homepage: https://github.com/GeertJohan/go.rice
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/GeertJohan/go.rice
 
-Package: template-repository
+Package: golang-github-geertjohan-go.rice-dev
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         golang-github-akavel-rsrc-dev (>= 0.8.0),
+         golang-github-daaku-go.zipexe-dev (>= 1.0.0),
+         golang-github-davecgh-go-spew-dev (>= 1.1.1),
+         golang-github-geertjohan-go.incremental-dev (>= 1.0.0),
+         golang-github-nkovacs-streamquote-dev (>= 1.0.0),
+         golang-github-valyala-fasttemplate-dev (>= 1.0.1),
+         golang-go-flags-dev (>= 1.4.0)
+Description: Go package for embedding web resources into Go executables
+ go.rice is a Golang package that makes working with resources such as
+ html, js, css, images and templates very easy. During development
+ go.rice will load required files directly from disk. Upon deployment
+ it is easy to add all resource files to a executable using the rice
+ tool, without changing the source code for your package. Several
+ methods are provided for adding resources to your binary by go.rice.
+ .
+ This package contains the development files.
+
+Package: golang-rice
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Built-Using: ${misc:Built-Using}
+Description: tool for embedding web resources into Go executables
+ go.rice is a Golang package that makes working with resources such as
+ html, js, css, images and templates very easy. During development
+ go.rice will load required files directly from disk. Upon deployment
+ it is easy to add all resource files to a executable using the rice
+ tool, without changing the source code for your package. Several
+ methods are provided for adding resources to your binary by go.rice.
+ .
+ This package contains the command-line tool.
