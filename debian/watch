@@ -1,0 +1,4 @@
+version=4
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%golang-github-geertjohan-go.rice-$1.tar.gz%" \
+    https://github.com/geertjohan/go.rice/tags \
+    (?:.*?/)?v?(\d[\d.]*)\.tar\.gz
